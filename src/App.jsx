@@ -16,10 +16,7 @@ function App() {
       message: message,
       sender: "user",
       direction: "outgoing"
-      //show on the right or sending out
     }
-      //update our messages state (updates messagebox for user)
-
       //process message to chatgpt and then issue a response bot
         //updates message box again
     const newMessages = [...messages, newMessage];
