@@ -22,7 +22,7 @@ function lengthOfLastWord (s) {
         }
     }
     return counter;
-};
+}
 
 let sentence = "hello world ";
 console.log(lengthOfLastWord(sentence)); //5
