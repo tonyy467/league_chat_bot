@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator} from "@chatscope/chat-ui-kit-react";
-import { API_KEY } from '/config';
+
 
 function App() {
+  // const API_KEY = "";
+
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
