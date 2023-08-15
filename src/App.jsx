@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator} from "@chatscope/chat-ui-kit-react";
-
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   // const API_KEY = '';;23
