@@ -1,7 +1,9 @@
+import React from 'react';
+
 function Homescreen () {
     return (
       <div>
-        Hello World
+        Boom
       </div>
     )
   }
