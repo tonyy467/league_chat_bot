@@ -12,7 +12,9 @@ export function Chatbot () {
       message: "Hello, I am ChatGPT!",
       sender: "ChatGPT"
     }
-  ]) // []
+  ]) 
+
+
 
   const sendMessage = async (message) => {
     const newMessage = {
@@ -20,18 +22,16 @@ export function Chatbot () {
       sender: "user",
       direction: "outgoing"
     }
-      //process message to chatgpt and then issue a response bot
-        //updates message box again
     const newMessages = [...messages, newMessage];
-
     setMessages(newMessages);
     setTyping(true)
     await processMessageToGPT(newMessages)
   }
 
+
   async function processMessageToGPT (chatMessages) {
-    //chatMessages {sender: "user" or "ChatGPT", message: "The content of the message"}
-    //apiMessage {role: "user" or "assistant", content: "The content of the message"}
+    //chatMessages {sender: "user"||"ChatGPT", message: "The content of the message"}
+    //apiMessage {role: "user"||"assistant", content: "The content of the message"}
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === 'ChatGPT') {
@@ -43,10 +43,9 @@ export function Chatbot () {
       return {role: role, content: messageObject.message}
     });
 
-    //system "role" in API call is essentially how we want ChatGPT to act
     const systemMessage = {
       role: "system",
-      content: "Respond as if you are 10 years old."
+      content: "Respond in such a way that a 10 years old could understand."
     }
 
     const apiRequestBody = {
@@ -87,7 +86,7 @@ export function Chatbot () {
               <MainContainer> 
                 <ChatContainer> 
                   <MessageList
-                    typingIndicator = {typing ? <TypingIndicator content="ChatGPT is curating your message"/> : null}
+                    typingIndicator = {typing ? <TypingIndicator content="Your model is thinking..."/> : null}
                   >
                     {messages.map((message, i) => {
                       return <Message key={i} model={message} />
