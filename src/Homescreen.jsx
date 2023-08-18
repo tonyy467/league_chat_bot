@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Homescreen () {
@@ -8,7 +8,7 @@ function Homescreen () {
   }
     return (
       <div>
-        <div onClick={handleClick}> Click here to see your BOT! </div>
+        <button onClick={handleClick}> Click here to see your BOT! </button>
       </div>
     )
   }

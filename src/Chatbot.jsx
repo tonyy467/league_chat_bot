@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator} from "@chatscope/chat-ui-kit-react";
 
@@ -76,7 +77,10 @@ export function Chatbot () {
         setTyping(false);
     });
   }
-
+  const navigate = useNavigate();
+  function backHome () {
+    navigate('/')
+  }
     return (
         <div className="App">
             <div style={{position: 'relative', height: '600px', width: '500px'}}>
@@ -93,6 +97,7 @@ export function Chatbot () {
                 </ChatContainer>
               </MainContainer>
             </div>
+            <button onClick={backHome}> Go back home </button>
         </div>
       )
 }
