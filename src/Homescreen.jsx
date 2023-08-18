@@ -8,7 +8,7 @@ function Homescreen () {
   }
     return (
       <div>
-        <Button onClick={handleClick}> Click here to see your BOT! </Button>>
+        <div onClick={handleClick}> Click here to see your BOT! </div>
       </div>
     )
   }
