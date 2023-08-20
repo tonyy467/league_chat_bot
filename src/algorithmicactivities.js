@@ -15,4 +15,3 @@ function lengthOfLastWord (s) {
 
 let sentence = "hello world ";
 console.log(lengthOfLastWord(sentence)); //5
-3
