@@ -93,14 +93,25 @@ console.log(res); // Output: 2 (Index of the peak element 3)
 // the first and last occurrence of a given key in the array. If the
 //  key is not present, return -1 for both indices.
 
+//try binary search tree
+//low, high so u dont have to iterate thru the entire arr
 function findLowHighIndices(arr, key) {
-  const result = [];
+  if (arr.length === 0) return [-1, -1];
+  let loIndex = -1;
+  let hiIndex = -1;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === key) {
-      result.push(i);
+      loIndex = i;
+      break;
     }
   }
-  return [result[0], result[result.length-1]]
+  for (let k = arr.length-1; k >= 0; k--) {
+    if (arr[k] === key) {
+    hiIndex = k;
+    break;
+    }
+  }
+  return [loIndex, hiIndex]
 }
 
 const arr = [2, 4, 4, 4, 6, 7, 9];
