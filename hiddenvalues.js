@@ -46,12 +46,22 @@ function findSmallestCommon(arr1, arr2, arr3) {
   let i = 0;
   let j = 0;
   let k = 0;
-  while (i < arr1.length; j < arr2.length; k < arr3.length) {
-    if (arr1[i] === arr2[j] && arr2[j] === arr3[j]) {
+  //while no arr has been exhausted yet
+  while (i < arr1.length && j < arr2.length && k < arr3.length) {
+    if (arr1[i] === arr2[j] && arr2[j] === arr3[k]) {
       return arr1[i];
     }
-    if ()
+    if (arr1[i] <= arr2[j] && arr1[i] <= arr3[k]) {
+      i++;
+    }
+    else if (arr2[j] <= arr1[i] && arr2[j] <= arr3[k]) {
+      j++
+    }
+    else {
+      k++;
+    }
   }
+  return -1;
 }
 
 const arr1 = [6, 7, 10, 25, 30, 63, 64];
@@ -60,3 +70,41 @@ const arr3 = [1, 6, 10, 14];
 
 const result = findSmallestCommon(arr1, arr2, arr3);
 console.log(result); // Output: 6
+
+// Given an array of integers nums, find a peak element and return its index. 
+// A peak element is an element that is greater than or equal to its neighbors. 
+// It is guaranteed that the input array will have at least one peak element.
+
+function findPeakElement(nums) {
+  for (let i = 1; i < nums.length-1; i++) {
+    if (nums[i] >= nums[i-1] && nums[i] >= nums[i+1]) {
+      return i
+    }
+  }
+}
+
+const nums = [1, 2, 3, 1];
+const res = findPeakElement(nums);
+console.log(res); // Output: 2 (Index of the peak element 3)
+
+// Problem Statement: Find Low/High Index of a Key in a Sorted Array
+
+// Given a sorted array of integers, you need to find the indices of 
+// the first and last occurrence of a given key in the array. If the
+//  key is not present, return -1 for both indices.
+
+function findLowHighIndices(arr, key) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === key) {
+      result.push(i);
+    }
+  }
+  return [result[0], result[result.length-1]]
+}
+
+const arr = [2, 4, 4, 4, 6, 7, 9];
+const key = 4;
+
+const re = findLowHighIndices(arr, key);
+console.log(re); // Output: [1, 3]
