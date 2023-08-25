@@ -174,3 +174,49 @@ moveZeroesToBeg(arrex);
 console.log(arrex); // Output: [0, 0, 0, 1, 2, 4, 5]
 
 
+// Problem Statement: Stock Buy Sell to Maximize Profit
+
+// You are given an array prices where prices[i] is the 
+// price of a given stock on the i-th day. You want to 
+// maximize your profit by choosing a single day to buy 
+// one stock and choosing a different day in the future 
+// to sell that stock.
+
+// Write a function maxProfit(prices) that takes an array 
+// of stock prices as input and returns the maximum profit 
+// that can be obtained.
+
+//brute force
+// function maxProfit(prices) {
+//   let maxProfit = 0;
+//   for (let i = 0; i < prices.length; i++) {
+//     for (let k = i+1; k < prices.length; k++) {
+//       let localProfit = prices[k] - prices[i];
+//       if (localProfit > maxProfit) {
+//         maxProfit = localProfit;
+//       }
+//     }
+//   }
+//   return maxProfit;
+// }
+
+function maxProfit (prices) {
+  let maxProfit = 0;
+  let minBuyPrice = prices[0];
+  for (let i = 1; i < prices.length; i++) {
+    let localizedProfit = prices[i] - minBuyPrice;
+    if (localizedProfit > maxProfit) {
+      maxProfit = localizedProfit;
+    }
+    if (minBuyPrice > prices[i]) {
+      minBuyPrice = prices[i]
+    }
+  }
+  return maxProfit;
+}
+
+const prices = [7, 1, 5, 3, 6, 4];
+const ex = maxProfit(prices);
+console.log(ex); 
+// Output: 5 (Buy on day 2 (price = 1) and sell on day 5 (price = 6), 
+//                                    profit = 6 - 1 = 5)
