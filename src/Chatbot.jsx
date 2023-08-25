@@ -45,7 +45,7 @@ export function Chatbot () {
 
     const systemMessage = {
       role: "system",
-      content: "Respond in such a way that a 10 years old could understand."
+      content: "You are a helpful coding assistant."
     }
 
     const apiRequestBody = {
