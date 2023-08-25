@@ -119,3 +119,58 @@ const key = 4;
 
 const re = findLowHighIndices(arr, key);
 console.log(re); // Output: [1, 3]
+
+// Given an array of integers, you need to modify the array in such a way that 
+// all occurrences of the integer 0 are moved to the beginning of the array, while 
+// maintaining the order of the non-zero elements. The modified array should have 
+// all 0s at the beginning, followed by the non-zero elements in their original order.
+
+// Write a function moveZerosToBeginning(arr) that takes an array arr as input and 
+// modifies it according to the requirements. The function should not return a new 
+// array; it should modify the input array in-place.
+
+// function moveZeroesToBeg(arr) {
+//   let left = 0;
+//   let right = arr.length-1;
+//   while (left <= right) {
+//      if (arr[right] === 0) {
+//       const temp = arr[left];
+//       arr[left] = arr[right];
+//       arr[right] = temp;
+//       left++;
+//       right--;
+//       }
+//       else if (arr[right] !== 0) {
+//         right--;
+//       }
+//       else {
+//         left++;
+//       }
+//   }
+// }
+
+// const arrex = [1, 2, 0, 4, 0, 5, 0];
+// moveZeroesToBeg(arrex);
+// console.log(arrex); // Output: [0, 0, 0, 1, 2, 4, 5]
+
+function moveZeroesToBeg(arr) {
+  let nonZeroIndex = arr.length - 1;
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] !== 0) {
+      arr[nonZeroIndex] = arr[i];
+      nonZeroIndex--;
+    }
+  }
+
+  while (nonZeroIndex >= 0) {
+    arr[nonZeroIndex] = 0;
+    nonZeroIndex--;
+  }
+}
+
+const arrex = [1, 2, 0, 4, 0, 5, 0];
+moveZeroesToBeg(arrex);
+console.log(arrex); // Output: [0, 0, 0, 1, 2, 4, 5]
+
+
