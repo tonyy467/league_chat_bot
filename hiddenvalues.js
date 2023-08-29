@@ -220,3 +220,57 @@ const ex = maxProfit(prices);
 console.log(ex); 
 // Output: 5 (Buy on day 2 (price = 1) and sell on day 5 (price = 6), 
 //                                    profit = 6 - 1 = 5)
+
+
+//You are given an array of intervals where intervals[i] = [start_i, end_i], 
+//representing the i-th interval. Two intervals [start_a, end_a] and [start_b, end_b] 
+//overlap if they share at least one common point. You want to merge all overlapping 
+//intervals.
+
+// function mergeIntervals(intervals) {
+//   let outut = [];
+//   for (let i = 0; i < intervals.length; i++) {
+//     if (intervals[i+1][0] >= intervals[i])
+//   }
+// }
+
+// const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+// const example = mergeIntervals(intervals);
+// console.log(example); // Output: [[1, 6], [8, 10], [15, 18]]
+
+// Problem Statement: Find Pair With Given Sum in an Array
+
+// You are given an array of integers and a target sum. Your 
+// task is to determine if there are two distinct elements in 
+// the array that sum up to the target sum.
+
+// Write a function hasPairWithSum(arr, target) that takes an array of 
+// integers arr and an integer target as input, and returns true if there 
+// exist two distinct elements in the array that add up to the target sum. 
+// Otherwise, return false.
+
+function hasPairWithSum(arr, target) {
+  let left = 0;
+  let right = arr.length-1;
+  while (left < right) {
+    let localSum = arr[left] + arr[right];
+    if (localSum === target) return true;
+    if (localSum > target) {
+      right--;
+    }
+    else {
+      left++;
+    }
+  }
+  return false;
+}
+
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 8)); // Output: true (Pair: 3 + 5 = 8)
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 10)); // Output: false 
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 6)); // Output: true (Pair: 2 + 4 = 6
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 7)); // Output: true (Pair: 2 + 5 = 7)
+console.log(hasPairWithSum([2, 4, 6, 8, 10], 14)); // Output: true (Pair: 4 + 10 = 14)
+console.log(hasPairWithSum([-1, 2, 5, 3, 8], 7)); // Output: true (Pair: -1 + 8 = 7)
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 9)); // Output: true (No such pair exists)
+console.log(hasPairWithSum([10, 20, 30, 40, 50], 70)); // Output: true (Pair: 20 + 50 = 70)
+console.log(hasPairWithSum([10, 20, 30, 40, 50], 71)); //false
