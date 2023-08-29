@@ -270,7 +270,3 @@ console.log(hasPairWithSum([1, 2, 3, 4, 5], 10)); // Output: false
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 6)); // Output: true (Pair: 2 + 4 = 6
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 7)); // Output: true (Pair: 2 + 5 = 7)
 console.log(hasPairWithSum([2, 4, 6, 8, 10], 14)); // Output: true (Pair: 4 + 10 = 14)
-console.log(hasPairWithSum([-1, 2, 5, 3, 8], 7)); // Output: true (Pair: -1 + 8 = 7)
-console.log(hasPairWithSum([1, 2, 3, 4, 5], 9)); // Output: true (No such pair exists)
-console.log(hasPairWithSum([10, 20, 30, 40, 50], 70)); // Output: true (Pair: 20 + 50 = 70)
-console.log(hasPairWithSum([10, 20, 30, 40, 50], 71)); //false
