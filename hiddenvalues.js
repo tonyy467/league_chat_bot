@@ -270,4 +270,4 @@ console.log(hasPairWithSum([1, 2, 3, 4, 5], 10)); // Output: false
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 6)); // Output: true (Pair: 2 + 4 = 6
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 7)); // Output: true (Pair: 2 + 5 = 7)
 console.log(hasPairWithSum([2, 4, 6, 8, 10], 14)); // Output: true (Pair: 4 + 10 = 14);
-//2
+//3
