@@ -271,3 +271,18 @@ console.log(hasPairWithSum([1, 2, 3, 4, 5], 6)); // Output: true (Pair: 2 + 4 = 
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 7)); // Output: true (Pair: 2 + 5 = 7)
 console.log(hasPairWithSum([2, 4, 6, 8, 10], 14)); // Output: true (Pair: 4 + 10 = 14);
 //2
+
+// You are given an array of non-negative integers. Your task is to arrange 
+// these numbers in such a way that they form the largest possible integer.
+
+// Write a function largestNumber(nums) that takes an array of non-negative 
+// integers nums as input and returns a string representing the largest 
+// possible integer that can be formed by arranging the numbers.
+
+function largestNumber(nums) {
+    // Your code here
+}
+
+const nums = [3, 30, 34, 5, 9];
+const result = largestNumber(nums);
+console.log(result); // Output: "9534330"
