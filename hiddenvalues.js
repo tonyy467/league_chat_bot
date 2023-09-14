@@ -280,7 +280,11 @@ console.log(hasPairWithSum([2, 4, 6, 8, 10], 14)); // Output: true (Pair: 4 + 10
 // possible integer that can be formed by arranging the numbers.
 
 function largestNumber(nums) {
-    // Your code here
+  let total = 0;
+    for (let i = 0; i < nums.length; i++) {
+      total += nums[i];
+    }
+    return total;
 }
 
 const numsxx = [3, 30, 34, 5, 9];
