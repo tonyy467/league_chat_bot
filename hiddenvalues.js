@@ -291,3 +291,44 @@ const numsxx = [3, 30, 34, 5, 9];
 const resultxx = largestNumber(numsxx);
 console.log(resultxx); // Output: "9534330"
 //343
+
+// You are tasked with implementing a singly linked list data structure from scratch 
+// in JavaScript. A singly linked list is a fundamental data structure consisting of 
+// nodes, where each node stores a value and a reference (link) to the next node in the 
+// sequence. Your implementation should support basic operations on linked lists.
+
+// Write a class LinkedList that represents a singly linked list and provides methods 
+// to perform the following operations:
+
+// add(value): Add a new node with the given value to the end of the linked list.
+
+// insertAt(value, index): Insert a new node with the given value at the specified 
+// index in the linked list. If the index is out of bounds, do nothing.
+
+// deleteAt(index): Delete the node at the specified index in the linked list. 
+// If the index is out of bounds, do nothing.
+
+// get(index): Retrieve the value of the node at the specified index in the linked list. 
+// If the index is out of bounds, return null.
+
+class LinkedList {
+    constructor() {
+        // Initialize the linked list
+    }
+
+    add(value) {
+        // Add a new node to the end of the linked list
+    }
+
+    insertAt(value, index) {
+        // Insert a new node with the given value at the specified index
+    }
+
+    deleteAt(index) {
+        // Delete the node at the specified index;
+    }
+
+    get(index) {
+        // Retrieve the value of the node at the specified index
+    }
+}
