@@ -332,3 +332,5 @@ class LinkedList {
         // Retrieve the value of the node at the specified index
     }
 }
+
+//1
